@@ -1,0 +1,219 @@
+body {
+    background-color: gray;
+    width: 100%;
+}
+
+/* Header Section */
+.header {
+    padding: 0px;
+    width: 360px;
+    display: flex;
+}
+
+.logo b {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 800;
+}
+
+.logo {
+    margin-left: 0px;
+    font-size: 30px;
+    display: flex;
+}
+
+.logo img {
+    border-radius: 10px;
+}
+
+.search {
+    margin-left: 30px;
+}
+
+.search-box {
+    display: none;
+}
+
+.search i {
+    display: block;
+}
+
+.login {
+    margin-left: 30px;
+}
+
+.login-btn {
+    display: none;
+}
+
+.login i {
+    font-size: 20px;
+    display: block;
+}
+
+.cart {
+    margin-left: 30px;
+}
+
+.cart .cart-btn {
+    display: none;
+}
+
+.cart i {
+    display: block;
+}
+
+.dropdown {
+    margin-left: 20px;
+}
+
+.dropdown #dropdown-btn {
+    display: none;
+}
+
+.dropdown i {
+    display: block;
+}
+
+.dropdown,
+.login,
+.search,
+.cart {
+    margin-top: 15px;
+}
+
+/* Main */
+
+.home {
+    display: flex;
+}
+
+.product {
+    display: flex;
+    margin-left: 4px;
+    margin-top: 10px;
+    margin-right: 0px;
+    border-radius: 10px;
+    border: 2px solid red;
+    padding: 5px;
+    background-color: black;
+    width: 255px;
+}
+
+.filter {
+    margin-left: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    background-color: black;
+    padding: 10px;
+    width: 90px;
+}
+
+.filter-btn {
+    font-size: 15px;
+    border-radius: 10px;
+    width: 60px;
+    margin-top: 5px;
+    margin-left: 0px;
+    background-color: black;
+    border-color: red;
+    color: red;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.filter-btn:hover {
+    background-color: rgb(123, 114, 114);
+    color: black;
+    transform: scale();
+}
+.advertisement{
+    display: none;
+}
+
+.card {
+    height: 280px;
+    width: 235px;
+    background-color: rgb(204, 200, 200);
+    margin-top: 10px;
+    margin-left: 3px;
+    margin-right: 0px;
+}
+
+.card:hover {
+    transform: scale(1);
+}
+
+.card-img-top {
+    height: 200px;
+}
+
+/* footer ------------------ */
+.footer {
+    margin-left: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    padding: 10px;
+    color: red;
+    background-color: black;
+    margin-bottom: 20px;
+    width: 350px;
+
+
+    /* display: none; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.li {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+
+.investor-div {
+    margin-left: 5px;
+}
+
+.investor {
+    height: 150px;
+    width: 300px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 2px solid red;
+}
+
+.link h2 {
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+.address {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.offices h2 {
+    margin-left: 120px;
+    margin-top: 20px;
+}
+
+.social-media {
+    margin-left: 20px;
+    margin-top: 30px;
+    height: 80px;
+    width: 300px;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+/* .social-media i{
+    font-size: 40px ;
+    margin-left: 40px;
+} */

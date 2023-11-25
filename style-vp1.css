@@ -1,0 +1,380 @@
+/* view-product css */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: gray;
+}
+.wrapper{
+    display: flex;
+    margin-top: 20px;
+}
+.image-div{
+    display: flex;
+    background-color: black;
+    height: 600px;
+    width: 700px;
+    border-radius:20px;
+    border:2px solid red;
+}
+.mini-image{
+    height: 80px;
+    width: 80px;
+    border:2px solid red;
+    border-radius:20px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.mini-image img{
+    border-radius:20px;
+}
+
+/* -----------detail---------- */
+.highlite::-webkit-scrollbar, .detail-div::-webkit-scrollbar ,.row::-webkit-scrollbar{
+    display: none;
+}
+.detail-div{
+    background-color: black;
+    color:white;
+    border-radius:20px;
+    border:2px solid red;
+    height: 570px;
+    width: 800px;
+    margin-left: 20px;
+    overflow:scroll;
+    scrollbar-width: 0px;
+    -ms-overflow-style: none;
+    padding:15px ;
+}
+
+/* ------------------header css --------------- */
+.header {
+    display: flex;
+    background-color: black;
+    padding: 10px;
+}
+.logo {
+    font-size: 40px;
+    margin-left: 40px;
+    margin-top: 5px;
+    color: red;
+    cursor: pointer;
+}
+.cart {
+    margin-left: 90px;
+    margin-top: 8px;
+}
+.cart-btn {
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100px;
+    background-color: black;
+    color: red;
+    border: none;
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    cursor: pointer;
+}
+.home-a {
+    text-decoration: none;
+    color: red;
+}
+/* --------------footer css ------------------- */
+
+.footer {
+    margin-left: 20px; 
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    padding: 20px;
+    color: red;
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.li {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 200px;
+    margin-top: 15px;
+}
+
+.investor-div {
+    margin-left: 50px;
+}
+
+.investor {
+    height: 300px;
+    width: 300px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 2px solid red;
+}
+
+.address {
+    margin-left: 200px;
+    margin-top: 30px;
+}
+.social-media{
+    margin-left: 550px;
+    margin-top: 30px;
+    height: 100px;
+    width: 400px;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+/* loading animation */
+#loading{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#fff url('images/loading.svg') no-repeat center;
+    z-index:1;
+}
+
+
+
+
+
+/* details div component animation... */
+
+.name-add-btn-desc{
+    border:2px solid red;
+    border-radius:20px;
+    height:200px;
+    width: 765px;
+    padding:10px;
+    font-size:25px;
+}
+.name{
+    width:650px;
+    border-bottom: 2px solid red;
+    margin-bottom: 7px;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+.price{
+    margin-left:20px;
+    margin-bottom: 30px;
+}
+.description{
+    margin-left: 10px;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 5px;
+    overflow: hidden;
+    height: 100px;
+    width: 500px;
+}
+.add-cart-btn{
+    background-color: lime;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 7px ;
+    margin-left:20px;
+}
+.add-cart-btn:hover{
+    box-shadow: 0 0 10px lime ,0 0 30px lime ,0 0 10px lime;
+    border: none;
+}
+.details{
+    border:2px solid red;
+    border-radius:20px;
+    margin-top:10px;
+    height:500px;
+    width: 765px;
+    padding:10px;
+    font-size:25px;  
+}
+.suggestion{
+    border:2px solid red;
+    border-radius:20px;
+    margin-top:10px;
+    height:500px;
+    width: 765px;
+    padding:10px;
+    font-size:25px;  
+    
+}
+.row{
+    display: flex;
+    overflow:scroll;
+    scrollbar-width: 5px;
+    -ms-overflow-style: none;
+}
+.card {
+    height: 410px;
+    width: 280px;
+    background-color: rgb(204, 200, 200);
+    border-radius: 20px;
+    /* margin-top: 30px; */
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-img-top {
+    height: 200px;
+    width:250px;
+}
+.highlite{
+    border:2px solid red;
+    display: flex;
+    border-radius:20px;
+    margin-top:10px;
+    height:300px;
+    width: 765px;
+    padding:5px;
+    overflow:scroll;
+    scrollbar-width: 5px;
+    -ms-overflow-style: none;
+    font-size:25px;  
+}
+.highlite-img{
+    height: 280px;
+    border-radius:20px;
+    width: 200px;
+    padding: 5px;
+}
+
+/* --------------------------zoom css---------------- */
+
+.img-magnifier-container {
+    position: relative;
+    background-color: white;
+    border-radius:20px;
+    border:2px solid red;
+    height: 550px;
+    width: 550px;
+    margin: 30px 0px 0px 15px ;
+}
+
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    cursor: none;
+    width: 150px;
+    height: 150px;
+}
+/* ---------------hr-------------- */
+#detail-table td{
+    border-bottom: 2px solid red;
+}
+#feature-table td{
+    border-bottom: 2px solid red;
+}
+
+#detail-table , #feature-table{
+    margin-left: 140px;
+}
+
+
+/* ------------------SWITCH BUTTON CSS-------------------------- */
+
+.toggle {
+    --width: 400px;
+    --height: 50px;
+
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--height);
+    cursor: pointer;
+    margin-left: 140px;
+    background-color: gray;
+  }
+
+  .toggle input {
+    display: none;
+  }
+
+  .toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--height);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle .slider::before {
+    content: "";
+    position: absolute;
+    top: 2.5px;
+    left: 2px;
+    width: 45px;
+    height: 40px;
+    border-radius: 20px;
+    border: 3px solid #63a6ee;
+    background-color: #c6e5ff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle input:checked+.slider {
+    border-color: #2196F3;
+  }
+
+  .toggle input:checked+.slider::before {
+    border-color: #2196F3;
+    background-color: #c6e5ff;
+    transform: translateX(calc(var(--width) - var(--height)));
+  }
+
+  .toggle .labels {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: sans-serif;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle .labels::after {
+    content: attr(data-off);
+    position: absolute;
+    right: 140px;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle .labels::before {
+    content: attr(data-on);
+    position: absolute;
+    left: 90px;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle input:checked~.labels::after {
+    opacity: 0;
+  }
+
+  .toggle input:checked~.labels::before {
+    opacity: 1;
+  }
+
+/* add to cart btn div */
+

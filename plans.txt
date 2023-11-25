@@ -1,0 +1,10 @@
+* add to cart logic - make table of cart and store data , qty update and delete product..
+* payment API
+* SSL IN WEBSITE , I mean -> " HTTPS:// "
+* LOADING Animation ------- done
+* Store Image in database
+* view product in zoom box style on cursor point , on hover mini image - display in main image div  
+* Offer count - enter real value and enter offer rate (21% off)
+* BUTTON --- POSITION FIXED-- GOTO THE END OF PAGE AND SECOND BUTTON FOR HELP....
+* Custome Alerts  
+* E-mail Facility
