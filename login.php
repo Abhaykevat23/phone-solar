@@ -109,7 +109,7 @@ body{
 a {
     color: blue;
 }
-a:hover {
+.link a:hover {
     /* color: black; */
     background:white;
 }

@@ -226,7 +226,6 @@ $(document).ready(function(){
                             echo "</form>";
                         }
                         ?>
-
                 </div>
             </div>
         </main>
