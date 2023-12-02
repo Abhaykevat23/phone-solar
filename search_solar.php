@@ -4,7 +4,7 @@
     $con=mysql_connect("localhost","root","");
     mysql_select_db("solar");
     $search=$_POST['search'];
-    $sel=mysql_query("select * from products where product_name or watt like '%".$search."%'");
+    $sel=mysql_query("select * from products where product_name like '%".$search."%' or watt like '%".$search."%'");
     $st="";
     while($ans=mysql_fetch_array($sel))
     {

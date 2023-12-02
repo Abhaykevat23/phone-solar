@@ -133,6 +133,7 @@ body {
     background-color: black;
     padding: 20px;
     width: 1100px;
+    display: none;
 }
 
 .filter-btn {
