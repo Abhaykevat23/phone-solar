@@ -123,7 +123,7 @@ $(document).ready(function(){
 
     <header class="header">
             <div class="heading">
-                <h1 class="logo"><img src="images/logo.jpg" height="40px" width="40px"> <b> Sun Solars</b></h1>
+                <h1 class="logo"><img src="images/logo.jpg" height="40px" width="40px"> <b> Bright-Star Solars</b></h1>
             </div>
             <div class="search">
                 <form name="f1" method="post" >
