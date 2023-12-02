@@ -121,22 +121,6 @@ if(isset($_POST['submit']))
         <i class="fa fa-bars"></i>
       </a> -->
     </div>
-
-    <!-- ===================== -->
-
-    <!-- <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-    </script> -->
-
-    <!-- ===================================================================== -->
-
     <div class="container">
     <h1>Admin Panel</h1>
     <form method="post" >
@@ -149,7 +133,8 @@ if(isset($_POST['submit']))
                         <option value="solar">Solar</option>
                         <option value="battery">Battery</option>
                         <option value="parts">Parts</option>
-                    </select></td></tr>
+                    </select>
+                </td></tr>
             <tr><td><input type="file" name="p_img" ></td> <td><p>main</p></td></tr>
             <tr><td><input type="file" name="p_img1" ></td><td><p>second</p></td></tr>
             <tr><td><input type="file" name="p_img2" ></td><td><p>detail</p></td></tr>
@@ -186,8 +171,17 @@ if(isset($_POST['submit']))
             
     </div>
     </div>
+
+    <!-- <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script> -->
+
     </body>
-    
-
-
 </html>
