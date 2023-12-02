@@ -40,61 +40,154 @@ if(isset($_POST['submit']))
 }
 
 ?>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
     <style>
         input{
             font-size:30px;
         }
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        .topnav a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        .topnav .icon {
+          display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+          .topnav a:not(:first-child) {display: none;}
+          .topnav a.icon {
+            float: right;
+            display: block;
+          }
+        }
+
+        /* @media screen and (max-width: 600px) {
+          .topnav.responsive {position: relative;}
+          .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          .topnav.responsive a {
+            float: none;                        --------responsive------
+            display: block;
+            text-align: left;
+          }
+        } */
     </style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a> -->
+    </div>
 
-<div class="container">
-<h1>Admin Panel</h1>
-<form method="post" >
-    <table cellpadding="10" cellspacing="10" >
-        <tr><td><input type="text" name="p_name" placeholder="name" ></td></tr>
-        <tr><td><input type="text" name="p_company" placeholder="company"  ></td></tr>
-        <tr><td><input type="text" name="watt"  placeholder="watt" ></td></tr>
-        <tr><td><input type="number" name="price"  placeholder="price" ></td></tr>
-        <tr><td><select name="type">
-                    <option value="solar">Solar</option>
-                    <option value="battery">Battery</option>
-                    <option value="parts">Parts</option>
-                </select></td></tr>
-        <tr><td><input type="file" name="p_img" ></td> <td><p>main</p></td></tr>
-        <tr><td><input type="file" name="p_img1" ></td><td><p>second</p></td></tr>
-        <tr><td><input type="file" name="p_img2" ></td><td><p>detail</p></td></tr>
-        <tr><td><input type="file" name="p_img3" ></td><td><p>warrenty</p></td></tr>
-        <tr><td><input type="file" name="p_img4" ></td><td><p>height</p></td></tr>
+    <!-- ===================== -->
 
-        <tr><td><input type="text" name="detail[]"  placeholder="165w|MAX POWER" ></td></tr> <!-- maximum power -->
-        <tr><td><input type="text" name="detail[]"  placeholder="22.20v | OPEN CIR. VALTAGE" ></td></tr> <!-- open circuit valtage -->
-        <tr><td><input type="text" name="detail[]"  placeholder="9.34A | SHORT CIR. CURRENT" ></td></tr> <!-- short circuit current -->
-        <tr><td><input type="text" name="detail[]"  placeholder="18.20V | VALTAGE MAX POWER" ></td></tr> <!-- valtage at max power -->
-        <tr><td><input type="text" name="detail[]"  placeholder="8.79A | CURRENT MAX POWER" ></td></tr> <!-- current at max power -->
-        <tr><td><input type="text" name="detail[]"  placeholder="1000V DC | MAX SYSTEM VALTAGE" ></td></tr> <!-- max system valtage -->
-        <tr><td><input type="text" name="detail[]"  placeholder="36 | NUM. CELLS PER MODULE" ></td></tr> <!-- number of cells per module -->
-        <tr><td><input type="text" name="detail[]"  placeholder="150x67x3.6 | PRODUCT DIMENTIONS" ></td></tr> <!-- product dimentions -->
-        <tr><td><input type="text" name="detail[]"  placeholder="COUNTRY" ></td></tr> <!-- country -->
-        <tr><td><input type="text" name="detail[]"  placeholder="25 | WARRANTY on perfo." ></td></tr> <!-- warrenty on perfomance -->
-        <tr><td><input type="text" name="detail[]"  placeholder="10 | WARRANTY on manufa." ></td></tr> <!-- warrenty on manufacturing -->
-        <br>
-        <tr><td><h2>------------------------------------------------------------------</h2></td></tr>
-        <br>
-        <tr><td><textarea row="8" col="10" name="description" placehilder="description" ></textarea></td></tr>
-        <tr><td><input type="text" name="feature[]"  placeholder="Feature 1" ></td></tr>
-        <tr><td><input type="text" name="feature[]"  placeholder="Feature 2" ></td></tr>
-        <tr><td><input type="text" name="feature[]"  placeholder="Feature 3" ></td></tr>
-        <tr><td><input type="text" name="feature[]"  placeholder="Feature 4" ></td></tr>
-        <tr><td><input type="text" name="feature[]"  placeholder="Feature 5" ></td></tr>
+    <!-- <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script> -->
+
+    <!-- ===================================================================== -->
+
+    <div class="container">
+    <h1>Admin Panel</h1>
+    <form method="post" >
+        <table cellpadding="10" cellspacing="10" >
+            <tr><td><input type="text" name="p_name" placeholder="name" ></td></tr>
+            <tr><td><input type="text" name="p_company" placeholder="company"  ></td></tr>
+            <tr><td><input type="text" name="watt"  placeholder="watt" ></td></tr>
+            <tr><td><input type="number" name="price"  placeholder="price" ></td></tr>
+            <tr><td><select name="type">
+                        <option value="solar">Solar</option>
+                        <option value="battery">Battery</option>
+                        <option value="parts">Parts</option>
+                    </select></td></tr>
+            <tr><td><input type="file" name="p_img" ></td> <td><p>main</p></td></tr>
+            <tr><td><input type="file" name="p_img1" ></td><td><p>second</p></td></tr>
+            <tr><td><input type="file" name="p_img2" ></td><td><p>detail</p></td></tr>
+            <tr><td><input type="file" name="p_img3" ></td><td><p>warrenty</p></td></tr>
+            <tr><td><input type="file" name="p_img4" ></td><td><p>height</p></td></tr>
+
+            <tr><td><input type="text" name="detail[]"  placeholder="165w|MAX POWER" ></td></tr> <!-- maximum power -->
+            <tr><td><input type="text" name="detail[]"  placeholder="22.20v | OPEN CIR. VALTAGE" ></td></tr> <!-- open circuit valtage -->
+            <tr><td><input type="text" name="detail[]"  placeholder="9.34A | SHORT CIR. CURRENT" ></td></tr> <!-- short circuit current -->
+            <tr><td><input type="text" name="detail[]"  placeholder="18.20V | VALTAGE MAX POWER" ></td></tr> <!-- valtage at max power -->
+            <tr><td><input type="text" name="detail[]"  placeholder="8.79A | CURRENT MAX POWER" ></td></tr> <!-- current at max power -->
+            <tr><td><input type="text" name="detail[]"  placeholder="1000V DC | MAX SYSTEM VALTAGE" ></td></tr> <!-- max system valtage -->
+            <tr><td><input type="text" name="detail[]"  placeholder="36 | NUM. CELLS PER MODULE" ></td></tr> <!-- number of cells per module -->
+            <tr><td><input type="text" name="detail[]"  placeholder="150x67x3.6 | PRODUCT DIMENTIONS" ></td></tr> <!-- product dimentions -->
+            <tr><td><input type="text" name="detail[]"  placeholder="COUNTRY" ></td></tr> <!-- country -->
+            <tr><td><input type="text" name="detail[]"  placeholder="25 | WARRANTY on perfo." ></td></tr> <!-- warrenty on perfomance -->
+            <tr><td><input type="text" name="detail[]"  placeholder="10 | WARRANTY on manufa." ></td></tr> <!-- warrenty on manufacturing -->
+            <br>
+            <tr><td><h2>------------------------------------------------------------------</h2></td></tr>
+            <br>
+            <tr><td><textarea row="8" col="10" name="description" placehilder="description" ></textarea></td></tr>
+            <tr><td><input type="text" name="feature[]"  placeholder="Feature 1" ></td></tr>
+            <tr><td><input type="text" name="feature[]"  placeholder="Feature 2" ></td></tr>
+            <tr><td><input type="text" name="feature[]"  placeholder="Feature 3" ></td></tr>
+            <tr><td><input type="text" name="feature[]"  placeholder="Feature 4" ></td></tr>
+            <tr><td><input type="text" name="feature[]"  placeholder="Feature 5" ></td></tr>
 
 
-        
-        <tr><td><input type="submit" value="Add Product" name="submit" ></td></tr>
-    </table>
-</form>
+            <tr><td><input type="submit" value="Add Product" name="submit" ></td></tr>
+        </table>
+    </form>
 
-<div>
+    <div>
+            
+    </div>
+    </div>
+    </body>
     
-</div>
-</div>
+
+
 </html>
