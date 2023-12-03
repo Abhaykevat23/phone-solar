@@ -163,7 +163,6 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
               data:{search:a},
               success:function(data){
                   $(".data").html(data);
-                  // alert($(".data").html(data));
               }
           });
         });
@@ -233,7 +232,7 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
     </div>
 
     <div class="update-div" style="margin-top:20px;" >
-      <form name="f1">
+      <form name="f1" action="edit.php" method="GET" >
         <table class="table table-hover" style="color:blue;font-size: 20px;">
           <thead>
             <tr><input type="search" name="t1" class="search" placeholder="Search" ></tr>
@@ -247,17 +246,19 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
               <th> ACTION'S</th> 
             </tr>
           </thead>
+          
           <tbody class="data">
             <?php
-              while($data=mysql_fetch_array($sel)){
+              while($ans=mysql_fetch_array($sel)){
                 echo "<tr>";
-                echo "<th>".$data[id]."</th>";
-                echo "<td>".$data[product_name]."</td>";
-                echo "<td>".$data[price]."</td>";
-                echo "<td>".$data[watt]."</td>";
-                echo "<td>".$data[category]."</td>";
-                echo "<td>".$data[company_name]."</td>";
-                echo "<td><a class='btn btn-primary' > Edit </a> &nbsp;&nbsp; <button class='btn btn-danger' > Delete </button> </td>";
+                echo "<th>".$ans[0]."</th>";
+                echo "<td>".$ans[1]."</td>";
+                echo "<td>".$ans[2]."</td>";
+                echo "<td>".$ans[3]."</td>";
+                echo "<td>".$ans[category]."</td>";
+                echo "<td>".$ans[4]."</td>";
+                // echo "<input type='hidden' value='<?php echo $data[0]; ' name='p_id' >";
+                echo "<td><a class='btn btn-primary' href='./edit.php?p_id=$ans[0]' > Edit </a> &nbsp;&nbsp; <button class='btn btn-danger' > Delete </button> </td>";
                 echo "</tr>";
               }   
             ?>
