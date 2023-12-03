@@ -71,6 +71,7 @@ $(document).ready(function(){
             data:{search:a},
             success:function(data){
                 $(".row").html(data);
+                // alert($(".row").html(data));
             }
         });
     });
@@ -140,7 +141,7 @@ $(document).ready(function(){
             <form class="cart" method="post" action="cart.php" >
                 <input type='hidden' value="<?php echo $_SESSION['email']; ?> " name='p_id' >
                 <button class="cart-btn" type="submit" >Cart🛒</button>
-                <i class="fa-solid fa-cart-shopping" style="color: #ff0000;"></i>
+                <i class="fa-solid fa-cart-shopping" style="color: #ff0000;"><button type="submit" ></button></i>
             </form>
             <div class="dropdown">
                 <button class="btn btn-black dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -153,7 +154,7 @@ $(document).ready(function(){
 
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="profile.php">User Profile</a></li>
-                    <li><a class="dropdown-item" href="temp-admin.php">Admin panel</a></li>
+                    <li><a class="dropdown-item" href="admin.php">Admin panel</a></li>
                     <li><a class="dropdown-item" href="about.html">About Us</a></li>
                     <li><a class="dropdown-item" href="#">Help</a></li>
                     <li><a class="dropdown-item" href="policy.html">Policy</a></li>

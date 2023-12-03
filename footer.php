@@ -28,6 +28,7 @@
 
             <div class="social-media">
                 <h2 align="center">Social Links</h2>
+                <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram" style="color: #ff0026;"></i> <i class="fa-brands fa-twitter" style="color: #ff0026;"></i> <i class="fa-brands fa-youtube" style="color: #ff0026;"></i>
             </div>
         </footer>
 </section>
