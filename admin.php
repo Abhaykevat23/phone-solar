@@ -39,19 +39,19 @@ if(isset($_POST['submit']))
 
 $sel=mysql_query("select id,product_name,price,watt,company_name,category from products");
 
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="external files/j.min.js"></script>
-    <style>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="external files/j.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <style>
         input{
             font-size:30px;
         }
@@ -113,63 +113,68 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
             text-align: left;
           }
         } */
-    </style>
+  </style>
 
-    <script>
-      $(document).ready(function(){
-        $(".home-div").show();
+  <script>
+    $(document).ready(function(){
+      $(".home-div").show();
+      $(".update-div").hide();
+      $(".delete-div").hide();
+      $(".insert-div").hide();
+      $(".setting-div").hide();
+
+      swal({
+            title: "User created!",
+            text: "Suceess message sent!!",
+            icon: "success",
+            button: "Ok",
+            timer: 2000
+        });
+
+        
+      $(".insert").click(function(){
         $(".update-div").hide();
+        $(".home-div").hide();
+        $(".delete-div").hide();
+        $(".insert-div").show();
+        $(".setting-div").hide();
+      });
+      $(".home").click(function(){
+        $(".update-div").hide();
+        $(".home-div").show();
         $(".delete-div").hide();
         $(".insert-div").hide();
         $(".setting-div").hide();
-
-        $(".insert").click(function(){
-          $(".update-div").hide();
-          $(".home-div").hide();
-          $(".delete-div").hide();
-          $(".insert-div").show();
-          $(".setting-div").hide();
-        });
-
-        $(".home").click(function(){
-          $(".update-div").hide();
-          $(".home-div").show();
-          $(".delete-div").hide();
-          $(".insert-div").hide();
-          $(".setting-div").hide();
-        });
-
-        $(".update").click(function(){
-          $(".update-div").show();
-          $(".home-div").hide();
-          $(".delete-div").hide();
-          $(".insert-div").hide();
-          $(".setting-div").hide();
-        });
-
-        $(".setting").click(function(){
-          $(".update-div").hide();
-          $(".home-div").hide();
-          $(".delete-div").hide();
-          $(".insert-div").hide();
-          $(".setting-div").show();
-        });
-
-        $(".search").keyup(function(){
-          var a=f1.t1.value;
-          $.ajax({
-              url:"admin-data-search.php",
-              type:"POST",
-              data:{search:a},
-              success:function(data){
-                  $(".data").html(data);
-              }
-          });
-        });
-
       });
-    </script>
+      $(".update").click(function(){
+        $(".update-div").show();
+        $(".home-div").hide();
+        $(".delete-div").hide();
+        $(".insert-div").hide();
+        $(".setting-div").hide();
+      });
+      $(".setting").click(function(){
+        $(".update-div").hide();
+        $(".home-div").hide();
+        $(".delete-div").hide();
+        $(".insert-div").hide();
+        $(".setting-div").show();
+      });
+      $(".search").keyup(function(){
+        var a=f1.t1.value;
+        $.ajax({
+            url:"admin-data-search.php",
+            type:"POST",
+            data:{search:a},
+            success:function(data){
+                $(".data").html(data);
+            }
+        });
+      });
+    });
+  </script>
 </head>
+
 <body>
   <div class="topnav" id="myTopnav">
     <a  class="home">Home</a>
@@ -232,7 +237,7 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
     </div>
 
     <div class="update-div" style="margin-top:20px;" >
-      <form name="f1" action="edit.php" method="GET" >
+      <form name="f1" method="GET" >
         <table class="table table-hover" style="color:blue;font-size: 20px;">
           <thead>
             <tr><input type="search" name="t1" class="search" placeholder="Search" ></tr>
@@ -257,8 +262,7 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
                 echo "<td>".$ans[3]."</td>";
                 echo "<td>".$ans[category]."</td>";
                 echo "<td>".$ans[4]."</td>";
-                // echo "<input type='hidden' value='<?php echo $data[0]; ' name='p_id' >";
-                echo "<td><a class='btn btn-primary' href='./edit.php?p_id=$ans[0]' > Edit </a> &nbsp;&nbsp; <button class='btn btn-danger' > Delete </button> </td>";
+                echo "<td><a class='btn btn-primary' href='./edit.php?p_id=$ans[0]' > Edit </a> &nbsp;&nbsp; <a class='btn btn-danger' href='./edit.php?pd_id=$ans[0]' > Delete </a> </td>";
                 echo "</tr>";
               }   
             ?>

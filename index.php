@@ -154,7 +154,7 @@ $(document).ready(function(){
 
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="profile.php">User Profile</a></li>
-                    <li><a class="dropdown-item" href="admin.php">Admin panel</a></li>
+                    <li><a class="dropdown-item" href="admin-login.php">Admin panel</a></li>
                     <li><a class="dropdown-item" href="about.html">About Us</a></li>
                     <li><a class="dropdown-item" href="#">Help</a></li>
                     <li><a class="dropdown-item" href="policy.html">Policy</a></li>
