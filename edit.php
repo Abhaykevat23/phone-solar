@@ -23,7 +23,8 @@ $description=$_GET['description'];
 $features_s=serialize($_GET['feature']);
 if(isset($_GET['submit'])){
   // echo "<script> alert('".$_GET['id']."') </script>";
-  mysql_query("update products set product_name=$p_name,price=$price,watt=$watt,company_name=$p_company,description=$description,feature=$features_s where id=".$_GET['id']  );
+  $p_id=$_GET['id'];
+  mysql_query("update products set product_name='".$p_name."',price=".$price.",watt='".$watt."',company_name='".$p_company."',description='".$description."',feature='".$features_s."' where id=".$p_id);
   echo "<script> location.href='admin.php'; </script>";
 }
 

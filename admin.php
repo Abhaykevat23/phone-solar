@@ -52,67 +52,104 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
   <script src="external files/j.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <style>
-        input{
-            font-size:30px;
-        }
-        body {
-          margin: 0;
-          font-family: Arial, Helvetica, sans-serif;
-          /* background-color:gray; */
-        }
-        .home{
-          background-color:green;
-        }
-        .topnav {
-          overflow: hidden;
-          background-color: #333;
-        }
+    .search{
+        font-size:30px;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      /* background-color:green; */
+    }
+    .home{
+      background-color:green;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .topnav a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    .topnav .icon {
+      display: none;
+    }
+    @media screen and (max-width: 600px) {
+      .topnav a:not(:first-child) {display: none;}
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+    /* @media screen and (max-width: 600px) {
+      .topnav.responsive {position: relative;}
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .topnav.responsive a {
+        float: none;                        --------responsive------
+        display: block;
+        text-align: left;
+      }
+    } */
+    /* ==================================================================== */
+    .insert-div form {
+			background-color: #fff;
+			max-width: 600px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
 
-        .topnav a {
-          float: left;
-          display: block;
-          color: #f2f2f2;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-          font-size: 17px;
-        }
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
 
-        .topnav a:hover {
-          background-color: #ddd;
-          color: black;
-        }
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
 
-        .topnav a.active {
-          background-color: #04AA6D;
-          color: white;
-        }
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 4px;
+			display: block;
+			width: 95%;
+		}
 
-        .topnav .icon {
-          display: none;
-        }
-
-        @media screen and (max-width: 600px) {
-          .topnav a:not(:first-child) {display: none;}
-          .topnav a.icon {
-            float: right;
-            display: block;
-          }
-        }
-
-        /* @media screen and (max-width: 600px) {
-          .topnav.responsive {position: relative;}
-          .topnav.responsive .icon {
-            position: absolute;
-            right: 0;
-            top: 0;
-          }
-          .topnav.responsive a {
-            float: none;                        --------responsive------
-            display: block;
-            text-align: left;
-          }
-        } */
+		/* Styling Button */
+		#form button {
+			background-color: #05c46b;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
   </style>
 
   <script>
@@ -192,48 +229,132 @@ $sel=mysql_query("select id,product_name,price,watt,company_name,category from p
       </div>
       
     <div class="insert-div" >
-      <form method="post" >
-        <h1>Admin Panel</h1>
-        <table cellpadding="10" cellspacing="10" >
-          <tr><td><input type="text" name="p_name" placeholder="name" ></td></tr>
-          <tr><td><input type="text" name="p_company" placeholder="company"  ></td></tr>
-          <tr><td><input type="text" name="watt"  placeholder="watt" ></td></tr>
-          <tr><td><input type="number" name="price"  placeholder="price" ></td></tr>
-          <tr><td><select name="type">
-                      <option value="solar">Solar</option>
-                      <option value="battery">Battery</option>
-                      <option value="parts">Parts</option>
-                  </select>
-              </td></tr>
-          <tr><td><input type="file" name="p_img" ></td> <td><p>main</p></td></tr>
-          <tr><td><input type="file" name="p_img1" ></td><td><p>second</p></td></tr>
-          <tr><td><input type="file" name="p_img2" ></td><td><p>detail</p></td></tr>
-          <tr><td><input type="file" name="p_img3" ></td><td><p>warrenty</p></td></tr>
-          <tr><td><input type="file" name="p_img4" ></td><td><p>height</p></td></tr>
-          
-          <tr><td><input type="text" name="detail[]"  placeholder="165w|MAX POWER" ></td></tr> <!-- maximum power -->
-          <tr><td><input type="text" name="detail[]"  placeholder="22.20v | OPEN CIR. VALTAGE" ></td></tr> <!-- open circuit valtage -->
-          <tr><td><input type="text" name="detail[]"  placeholder="9.34A | SHORT CIR. CURRENT" ></td></tr> <!-- short circuit current -->
-          <tr><td><input type="text" name="detail[]"  placeholder="18.20V | VALTAGE MAX POWER" ></td></tr> <!-- valtage at max power -->
-          <tr><td><input type="text" name="detail[]"  placeholder="8.79A | CURRENT MAX POWER" ></td></tr> <!-- current at max power -->
-          <tr><td><input type="text" name="detail[]"  placeholder="1000V DC | MAX SYSTEM VALTAGE" ></td></tr> <!-- max system valtage -->
-          <tr><td><input type="text" name="detail[]"  placeholder="36 | NUM. CELLS PER MODULE" ></td></tr> <!-- number of cells per module -->
-          <tr><td><input type="text" name="detail[]"  placeholder="150x67x3.6 | PRODUCT DIMENTIONS" ></td></tr> <!-- product dimentions -->
-          <tr><td><input type="text" name="detail[]"  placeholder="COUNTRY" ></td></tr> <!-- country -->
-          <tr><td><input type="text" name="detail[]"  placeholder="25 | WARRANTY on perfo." ></td></tr> <!-- warrenty on perfomance -->
-          <tr><td><input type="text" name="detail[]"  placeholder="10 | WARRANTY on manufa." ></td></tr> <!-- warrenty on manufacturing -->
-          <br>
-          <tr><td><h2>------------------------------------------------------------------</h2></td></tr>
-          <br>
-          <tr><td><textarea row="8" col="10" name="description" placehilder="description" ></textarea></td></tr>
-          <tr><td><input type="text" name="feature[]"  placeholder="Feature 1" ></td></tr>
-          <tr><td><input type="text" name="feature[]"  placeholder="Feature 2" ></td></tr>
-          <tr><td><input type="text" name="feature[]"  placeholder="Feature 3" ></td></tr>
-          <tr><td><input type="text" name="feature[]"  placeholder="Feature 4" ></td></tr>
-          <tr><td><input type="text" name="feature[]"  placeholder="Feature 5" ></td></tr>
-          <tr><td><input type="submit" value="Add Product" name="submit" ></td></tr>
-        </table>
-      </form>
+    
+      <form id="form" method="post">
+        <h1>Add Product</h1>
+      <div class="form-control">
+          <label for="name" id="label-name">Name</label>
+          <input type="text" id="name" placeholder="Enter Name" name="p_name" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">Company Name</label>
+          <input type="text" id="name" placeholder="Enter Name" name="p_company" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">Watt</label>
+          <input type="text" id="name" placeholder="Enter Name" name="watt" required />
+      </div>
+      <div class="form-control">
+          <label for="price" id="label-price">price</label>
+          <input type="number" id="price" placeholder="Enter price" name="price" required />
+      </div>
+      <!-- ##################################################### -->
+      <div class="form-control">
+          <label for="role" id="label-role">Select Product Category</label>
+          <select name="type" id="role">
+              <option value="solar" selected >Solar</option>
+              <option value="battery">Battery</option>
+              <option value="parts">Parts</option>
+          </select>
+      </div>
+      <!-- ##################################################### -->
+      <div class="form-control">
+          <label for="img" id="label-img">Main Image</label>
+          <input type="file" id="img" name="p_img" required />
+      </div>
+      <div class="form-control">
+          <label for="img" id="label-img">Second Image</label>
+          <input type="file" id="img" name="p_img1" required />
+      </div>
+      <div class="form-control">
+          <label for="img" id="label-img">Detail Image</label>
+          <input type="file" id="img" name="p_img2" required />
+      </div>
+      <div class="form-control">
+          <label for="img" id="label-img">Warrenty Image</label>
+          <input type="file" id="img" name="p_img3" required />
+      </div>
+      <div class="form-control">
+          <label for="img" id="label-img">Height Image</label>
+          <input type="file" id="img" name="p_img4" required />
+      </div>
+
+      <!-- ##################################################### -->
+
+      <div class="form-control">
+          <label for="name" id="label-name">MAX POWER</label>
+          <input type="text" id="name" name="detail[]"  placeholder="165w" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">OPEN CIR. VALTAGE</label>
+          <input type="text" id="name" name="detail[]"  placeholder="22.20v" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">SHORT CIR. CURRENT</label>
+          <input type="text" id="name" name="detail[]"  placeholder="9.34A" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">VALTAGE MAX POWER</label>
+          <input type="text" id="name" name="detail[]"  placeholder="18.20V" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">CURRENT MAX POWER</label>
+          <input type="text" id="name" name="detail[]"  placeholder="8.79A" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">MAX SYSTEM VALTAGE</label>
+          <input type="text" id="name" name="detail[]"  placeholder="1000V DC" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">NUM. CELLS PER MODULE</label>
+          <input type="text" id="name" name="detail[]"  placeholder="36" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">PRODUCT DIMENTIONS</label>
+          <input type="text" id="name" name="detail[]"  placeholder="150x67x3.6" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">COUNTRY</label>
+          <input type="text" id="name" name="detail[]"  placeholder="COUNTRY" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">WARRANTY on perfo.</label>
+          <input type="text" id="name" name="detail[]"  placeholder="25" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">WARRANTY on manufa.</label>
+          <input type="text" id="name" name="detail[]"  placeholder="10" required />
+      </div>
+    
+      <!-- ##################################################### -->
+      <div class="form-control">
+          <label for="name" id="label-name">Feature 1</label>
+          <input type="text" id="name" name="feature[]"  placeholder="Feature 1" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">Feature 2</label>
+          <input type="text" id="name" name="feature[]"  placeholder="Feature 2" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">Feature 3</label>
+          <input type="text" id="name" name="feature[]"  placeholder="Feature 3" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">Feature 4</label>
+          <input type="text" id="name" name="feature[]"  placeholder="Feature 4" required />
+      </div>
+      <div class="form-control">
+          <label for="name" id="label-name">Feature 5</label>
+          <input type="text" id="name" name="feature[]"  placeholder="Feature 5" required />
+      </div>
+      <!-- ##################################################### -->
+      <div class="form-control">
+          <label for="description">Product Description</label>
+          <textarea  id="comment" placeholder="Enter Description here" name="description"></textarea>
+      </div>
+
+        <button type="submit" value="submit" name="submit" >Submit</button>
+    </form>
     </div>
 
     <div class="update-div" style="margin-top:20px;" >
